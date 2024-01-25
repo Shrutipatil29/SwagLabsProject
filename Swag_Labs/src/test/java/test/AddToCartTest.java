@@ -16,7 +16,7 @@ public class AddToCartTest extends BaseTest {
         driver = Browser.chrome();
     }
 
-    @Test(priority = 1)
+    @Test
 
 
     public void addSingleProductToCart() {
@@ -32,7 +32,7 @@ public class AddToCartTest extends BaseTest {
         Assert.assertEquals(products, 1);
     }
 
-    @Test(priority = 2)
+    @Test
     public void addMultipleProductToCart() {
 
         Login l = new Login(driver);
@@ -50,17 +50,21 @@ public class AddToCartTest extends BaseTest {
     }
 
 
-    @Test(priority = 3)
+    @Test
     public void RemoveProductsFromTheCart(){
+
 
         Login l = new Login(driver);
 
         l.loginWithValidUsernameAndValidPassword();
         AddToCart add = new AddToCart(driver);
+        add.addproductsToCart(0);
+        add.addproductsToCart(1);
         add.removeProductsFromTheCart(0);
-        add.removeProductsFromTheCart(1);
-
-    }
+        
+ 
+        
+        Assert.assertEquals(add.getNumberOfProdutsInCart(),1);
 }
 
 
