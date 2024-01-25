@@ -15,7 +15,7 @@ public class LoginTest extends BaseTest {
         driver= Browser.chrome();
     }
 
-    @Test(priority = 1)
+    @Test
 
 
     public void login_With_Valid_User_and_Valid_Password() {
@@ -28,7 +28,7 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(product,"Products");
     }
 
-    @Test(priority = 2)
+    @Test
     public void login_With_Invalid_User_and_Valid_Password() {
 
         Login l = new Login(driver);
@@ -38,7 +38,7 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(Error,"Epic sadface: Username and password do not match any user in this service");
     }
 
-    @Test(priority = 3)
+    @Test
 
         public void login_With_Valid_User_and_Invalid_Password() {
 
@@ -50,7 +50,7 @@ public class LoginTest extends BaseTest {
             Assert.assertEquals(Error,"Epic sadface: Username and password do not match any user in this service");
         }
 
-        @Test(priority = 4)
+        @Test
 
             public void login_With_Invalid_User_and_Invalid_Password() {
 
