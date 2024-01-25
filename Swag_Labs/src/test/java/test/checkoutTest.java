@@ -16,7 +16,7 @@ public class checkoutTest extends BaseTest {
         driver = Browser.chrome();
     }
 
-    @Test(priority = 1)
+    @Test
     public void proceedToCheckout()  {
         Login l = new Login(driver);
 
